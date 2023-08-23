@@ -1,0 +1,33 @@
+.about-me {
+    padding: 1em 1em 0;
+}
+
+.about-me h1 {
+    font-size: 2.1rem;
+}
+
+.hero-post-top,
+.hero-post-inner {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.hero-post-img {
+  margin: 1.7em 0;
+  object-fit: cover;
+}
+
+@media(min-width: 550px) {
+    .about-me {
+        padding: 1em 2.5em;
+        max-width: 1200px;
+    }
+}
+
+@media(min-width: 768px) {
+
+    .about-me {
+        margin: 0 auto;
+        padding: 3.5em 2.5em 0em;
+    }
+}

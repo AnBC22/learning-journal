@@ -1,39 +1,9 @@
 import { blogPosts } from './data.js'
 
-const hero = document.getElementById('hero');
-const heroPost = document.getElementById('hero-post');
-const aboutMeSection = document.getElementById('about-me');
+const viewMoreEl = document.getElementById('view-more')
 
-document.addEventListener('click', function(e) {
-    if(e.target.id === 'home-link') {
-        toggleSection(hero)
-    }
-    else if(e.target.id === 'about-me-link') {
-        toggleSection(aboutMeSection)
-    }
-    else if(e.target.closest('#hero')) {
-        toggleSection(heroPost)
-    }
-    else if(e.target.id === 'view-more') {
-        renderPosts()
-    }
-})
+viewMoreEl.addEventListener('click', renderPosts)
 
-
-function toggleSection(sectionToShow) {
-    
-    const sections = [hero, heroPost, aboutMeSection];
-
-    sections.forEach(function(section) {
-        if(sectionToShow === section) {
-            sectionToShow.classList.remove('hidden');
-        } else {
-            section.classList.add('hidden')
-        }
-    })
-}
-
-// ---------------------------------------
 let postsToRender = 3; 
 let currentPage = 1 
 
@@ -44,10 +14,10 @@ function handleWindowSizeChange() {
         postsToRender = 4;
     }
     else if(screenWidth >= 768) {
-        console.log(`my screen width is: ${screenWidth}`)
         postsToRender = 6;
     }
 }
+
 // -------------------------------------
 function renderPosts() {
 
@@ -58,8 +28,8 @@ function renderPosts() {
         document.getElementById('feed').innerHTML = getPostsHtml(startIndex, endIndex)
         currentPage++;
     }
-
 }
+
 // -------------------------------------
 function getPostsHtml(start, end) {
     let feed = ``

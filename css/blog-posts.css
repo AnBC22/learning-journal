@@ -1,0 +1,48 @@
+.feed {
+    max-width: 1350px;
+    margin: 0 auto;
+    padding: 0 0.5em;
+}
+
+.view-more-div {
+    text-align: center;
+    padding: 0.5em 0 1.5em;
+}
+
+.view-more {
+    text-decoration: underline;
+    text-transform: capitalize;
+}
+  
+
+/* Media Queries */
+
+@media(min-width: 550px) {
+
+    .feed {
+        display: grid;
+        grid-template: 1fr / 1fr 1fr;
+        grid-gap: 1em;
+    }
+
+    .view-more-div {
+        padding: 1em 0 2em;
+    }
+
+}
+
+@media(min-width: 768px) {
+
+    .feed {
+        grid-template: 1fr / 1fr 1fr 1fr;
+    }
+
+    .feed {
+        padding: 0 2em;
+    }
+
+    .view-more-div {
+        padding: 2em 0 3em;
+    }
+
+}

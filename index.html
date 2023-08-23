@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+    <head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>My learning journal</title>
         <meta name="description" content="A journal of my web development learning experience">
         <meta name="author" content="Edgar Brenes">
-        <link rel="stylesheet" href="index.css">
+        <link rel="stylesheet" href="css/index.css">
         <!-- fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,86 +24,45 @@
             <nav>
                 <ul class="navbar-ul">
                     <li><a href="#" id="home-link">HOME</a></li>
-                    <li><a href="#" id="about-me-link">ABOUT ME</a></li>
+                    <li><a href="about-me.html" id="about-me-link">ABOUT ME</a></li>
                 </ul>
             </nav>
         </header>
 
         <main>
             <section id="hero" class="hero">
-                <div class="hero-inner">
-                    <p class="post-date">JULY 23, 2023</p>
-                    <h1>My new journey as a bootcamp student</h1>
-                    <p>After several months of learning in the Frontend Developer Career Path, I've made the big jump over 
-                        to the Bootcamp to get expert code reviews of my Solo Projects projects and meet like-minded peers.</p>
+                <div class="hero-max">
+                    <div class="hero-inner">
+                        <p class="post-date">JULY 23, 2023</p>
+                        <h1><a href="intro-post.html" class="read-more-link">My new journey as a bootcamp student</a></h1>
+                        <p>After several months of learning in the Frontend Developer Career Path, I've made the big jump over 
+                            to the Bootcamp to get expert code reviews of my Solo Projects projects and meet like-minded peers. <span class="bold read-more"><a href="intro-post.html" class="read-more-link">Read more...</a></span></p>
+                    </div>
                 </div>
             </section>
 
-            <div class="intro-wrapper"> 
-                <section id='hero-post' class="hidden">
-                    <div class="hero-post-top">
-                        <p class="post-date">JULY 23, 2023</p>
-                        <h1>My new journey as a bootcamp student</h1>
-                        <p>After several months of learning in the Frontend Developer Career Path, I've made the big jump over 
-                            to the Bootcamp to get expert code reviews of my Solo Projects projects and meet like-minded peers.</p>
-                    </div>
-                    <div class="hero hero-post-img"></div>
-                    <div class="hero-post-inner">
-                        <p class="bold">How I stay committed to learning</p>
-                        <p>I like to think of myself as a lifelong learner. I used to spend hours and hours learning, then try 
-                            to create simple projects using what I learned or work new techniques into existing projects.</p>
-                        <p>While that was fun, I felt like it would be helpful to share what I was learning and most things about 
-                            my journey with the world.</p>
-                        <p class="bold">How I got started</p>
-                        <p>I started simple and gradually grew my learning journal site. I would take notes about what I was learning. 
-                            After each learning session, I'd use my notes to not only reflect on what I learned but also write short 
-                            summaries of what I learned using my own words.</p>
-                        <p>That helped me grok what I was learning, and I realized that posting my learning summaries was also helping 
-                            others learn and stay motivated.</p>
-                        <p class="recent-posts bold">Recent posts</p>
-                    </div>
-                </section>
+            <div id="blog-post">
 
-                <section id='about-me' class="hidden">
-                    <div class="about-me-top">
-                        <img src="images/profile-img.jpg" class="profile-img">
-                        <div>
-                            <h1>Hi there! My name is Andrés and welcome to my learning journal.</h1>
-                            <p>After several months of learning in the Frontend Developer Career Path, I've made the big jump over 
-                                to the Bootcamp to get expert code reviews of my Solo Projects projects and meet like-minded peers.</p>
-                        </div>
-                    </div>
-                    <div class="about-me-inner">
-                        <p class="bold">How I stay committed to learning</p>
-                        <p>I like to think of myself as a lifelong learner. I used to spend hours and hours learning, then try 
-                            to create simple projects using what I learned or work new techniques into existing projects.</p>
-                        <p>While that was fun, I felt like it would be helpful to share what I was learning and most things about 
-                            my journey with the world.</p>
-                        <p class="bold">How I got started</p>
-                        <p>I started simple and gradually grew my learning journal site. I would take notes about what I was learning. 
-                            After each learning session, I'd use my notes to not only reflect on what I learned but also write short 
-                            summaries of what I learned using my own words.</p>
-                        <p>That helped me grok what I was learning, and I realized that posting my learning summaries was also helping 
-                            others learn and stay motivated.</p>
-                    </div>
-                    <p class="recent-posts bold">Recent posts</p>
-                </section>
             </div>
-        
-            <div id="feed" class="feed">
-            </div>
-            
-            <div class="view-more-div">
-                <p><a id="view-more" class="view-more bold">view more</a></p>
-            </div>
+
         </main>
 
         <footer>
             <p class="bold">My Learning Journal</p>
             <p>Copyright &copy;2023</p>
         </footer>
-        
-        <script src="index.js" type="module"></script>
+
+        <script>
+            // Use the Fetch API to load the content from the external HTML file
+            fetch('blog-posts.html')
+                .then(response => response.text())
+                .then(content => {
+                // Insert the loaded content into the container
+                document.getElementById('blog-post').innerHTML = content;
+                });
+        </script>
+
+        <script src="blog-posts.js" type="module"></script>
     </body>
 
 </html>
