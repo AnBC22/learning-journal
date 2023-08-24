@@ -18,7 +18,7 @@
     <body>
         <header class="bold">
             <div class="logo">
-                <img class="logo-img" src="images/logo.png">
+                <img class="logo-img" src="images/logo.png" alt="logo of learning journal">
                 <p>My learning journal</p>
             </div>
             <nav>
@@ -45,6 +45,10 @@
 
             </div>
 
+            <div class="view-more-div">
+                <p><a id="view-more" class="view-more bold">view more</a></p>
+            </div>
+
         </main>
 
         <footer>
@@ -53,15 +57,12 @@
         </footer>
 
         <script>
-            // Use the Fetch API to load the content from the external HTML file
             fetch('blog-posts.html')
                 .then(response => response.text())
                 .then(content => {
-                // Insert the loaded content into the container
                 document.getElementById('blog-post').innerHTML = content;
                 });
         </script>
-
         <script src="blog-posts.js" type="module"></script>
     </body>
 

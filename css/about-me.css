@@ -7,13 +7,14 @@
 }
 
 .about-me-inner {
-    padding-top: 1em;
+    padding-top: 0.4em;
 }
 
 @media(min-width: 550px) {
     .about-me-inner {
         max-width: 900px;
         margin: 0 auto;
+        padding-top: 0.7em;
     }
 
     .about-me {
