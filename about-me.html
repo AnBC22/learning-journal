@@ -9,6 +9,14 @@
     <meta name="author" content="Edgar Brenes">
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/about-me.css">
+
+    <script>
+        fetch('blog-posts.html')
+            .then(response => response.text())
+            .then(content => {
+            document.getElementById('blog-post').innerHTML = content;
+            });
+    </script>
 </head>
 
 <body>
@@ -65,13 +73,7 @@
     </main>
 
 
-	<script>
-        fetch('blog-posts.html')
-            .then(response => response.text())
-            .then(content => {
-            document.getElementById('blog-post').innerHTML = content;
-            });
-    </script>
+	
     <script src="blog-posts.js" type="module"></script>
   </body>
 

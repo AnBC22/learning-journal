@@ -10,6 +10,13 @@
     <meta name="author" content="Edgar Brenes">
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/intro-post.css">
+    <script>
+        fetch('blog-posts.html')
+            .then(response => response.text())
+            .then(content => {
+            document.getElementById('blog-post').innerHTML = content;
+        });
+    </script>
   </head>
 
 
@@ -62,14 +69,6 @@
         <p class="bold">My Learning Journal</p>
         <p>Copyright &copy;2023</p>
     </footer>
-    
-    <script>
-        fetch('blog-posts.html')
-            .then(response => response.text())
-            .then(content => {
-            document.getElementById('blog-post').innerHTML = content;
-            });
-    </script>
     
     <script src="blog-posts.js" type="module"></script>
   </body>
